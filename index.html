@@ -2,40 +2,78 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Exclusive Invitation</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     >
 
+
     <style>
+
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             box-sizing: border-box;
+
             margin: 0;
+
             padding: 0;
         }
 
+
+        /* =========================
+           BODY
+        ========================= */
+
         body {
+
             min-height: 100vh;
 
-            background-image: url("images/background.jpeg");
-            background-repeat: repeat;
-            background-size: 600px auto;
-            background-position: top left;
+            background-image:
+                url("images/background.jpeg");
 
-            font-family: 'Montserrat', sans-serif;
+            background-repeat: repeat;
+
+            background-size: 600px auto;
+
+            background-position:
+                top left;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             padding: 20px;
@@ -51,10 +89,13 @@
         ========================= */
 
         .card-container {
+
             width: 100%;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
         }
 
@@ -64,21 +105,25 @@
         ========================= */
 
         .vintage-card {
+
             width: 100%;
+
             max-width: 460px;
 
             background:
-                rgba(255, 245, 247, 0.94);
+                rgba(255,245,247,0.94);
 
             background-image:
+
                 radial-gradient(
-                    rgba(216, 27, 96, 0.04) 1px,
+                    rgba(216,27,96,0.04) 1px,
                     transparent 0
                 ),
+
                 linear-gradient(
                     to bottom,
-                    rgba(255, 255, 255, 0.7),
-                    rgba(252, 228, 236, 0.7)
+                    rgba(255,255,255,0.7),
+                    rgba(252,228,236,0.7)
                 );
 
             background-size:
@@ -92,21 +137,32 @@
             position: relative;
 
             box-shadow:
-                0 20px 50px rgba(216, 27, 96, 0.15),
-                inset 0 0 60px rgba(255, 255, 255, 0.8);
+
+                0 20px 50px
+                rgba(216,27,96,0.15),
+
+                inset 0 0 60px
+                rgba(255,255,255,0.8);
 
             border:
-                1px solid rgba(244, 143, 177, 0.4);
+                1px solid
+                rgba(244,143,177,0.4);
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter:
+                blur(12px);
 
-            transition: max-width 0.5s ease;
+            -webkit-backdrop-filter:
+                blur(12px);
+
+            transition:
+                max-width 0.5s ease;
         }
 
 
         .vintage-card.large-card {
+
             max-width: 650px;
+
             padding: 40px 35px;
         }
 
@@ -116,16 +172,24 @@
         ========================= */
 
         .page {
+
             display: none;
 
             animation:
-                fadeIn 0.45s
-                cubic-bezier(0.25, 1, 0.5, 1)
+                fadeIn
+                0.45s
+                cubic-bezier(
+                    0.25,
+                    1,
+                    0.5,
+                    1
+                )
                 forwards;
         }
 
 
         .page.active {
+
             display: block;
         }
 
@@ -133,15 +197,20 @@
         @keyframes fadeIn {
 
             from {
+
                 opacity: 0;
-                transform: translateY(10px);
+
+                transform:
+                    translateY(10px);
             }
 
             to {
-                opacity: 1;
-                transform: translateY(0);
-            }
 
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
         }
 
 
@@ -150,6 +219,7 @@
         ========================= */
 
         .badge {
+
             display: inline-block;
 
             font-size: 11px;
@@ -176,6 +246,7 @@
         ========================= */
 
         h1 {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -193,6 +264,7 @@
 
 
         .text-p {
+
             font-size: 14px;
 
             color: #5d3543;
@@ -204,77 +276,77 @@
 
 
         /* =========================
-           PAGE 2 SCRAPBOOK FRAME
+           PAGE 2 SCRAPBOOK
         ========================= */
 
         .scrapbook-frame {
+
             position: relative;
 
             background:
-                rgba(255, 255, 255, 0.72);
+                rgba(255,255,255,0.72);
 
-            padding: 30px 22px;
+            padding:
+                30px 22px;
 
-            margin: 22px 0;
+            margin:
+                22px 0;
 
             border:
-                2px solid rgba(244, 143, 177, 0.55);
+                2px solid
+                rgba(244,143,177,0.55);
 
             border-radius:
                 38px 22px 42px 25px;
 
             box-shadow:
-                0 10px 30px rgba(216, 27, 96, 0.08),
-                inset 0 0 25px rgba(255,255,255,0.8);
 
-            transform: rotate(-0.5deg);
+                0 10px 30px
+                rgba(216,27,96,0.08),
+
+                inset 0 0 25px
+                rgba(255,255,255,0.8);
+
+            transform:
+                rotate(-0.5deg);
         }
 
 
         .scrapbook-frame::before {
+
             content: "✦";
 
             position: absolute;
 
             top: 10px;
+
             left: 18px;
 
             font-size: 20px;
 
             color: #f48fb1;
 
-            transform: rotate(-15deg);
+            transform:
+                rotate(-15deg);
         }
 
 
         .scrapbook-frame::after {
+
             content: "♡";
 
             position: absolute;
 
             bottom: 10px;
+
             right: 18px;
 
             font-size: 22px;
 
             color: #d81b60;
 
-            transform: rotate(12deg);
-        }
-
-
-        .scrapbook-note {
-            font-family:
-                'Cormorant Garamond',
-                serif;
-
-            font-size: 19px;
-
-            font-style: italic;
-
-            color: #880e4f;
-
-            margin-bottom: 20px;
+            transform:
+                rotate(12deg);
         }
 
 
@@ -283,6 +355,7 @@
         ========================= */
 
         .email-body {
+
             text-align: center;
 
             font-size: 14px;
@@ -294,11 +367,13 @@
 
 
         .email-body p {
+
             margin-bottom: 18px;
         }
 
 
         .email-body p:last-child {
+
             margin-bottom: 0;
         }
 
@@ -308,6 +383,7 @@
         ========================= */
 
         .photo-row {
+
             display: flex;
 
             justify-content: center;
@@ -321,13 +397,15 @@
 
 
         .polaroid {
+
             background: #ffffff;
 
             padding:
                 10px 10px 12px;
 
             box-shadow:
-                0 10px 25px rgba(0,0,0,0.1);
+                0 10px 25px
+                rgba(0,0,0,0.1);
 
             border-radius: 4px;
 
@@ -338,34 +416,55 @@
         }
 
 
-        .polaroid.center-photo {
-            width: 60%;
+        /* CHILDHOOD / SINGLE LARGE PHOTO */
 
-            margin: 15px auto;
+        .photo-row .polaroid:only-child {
+
+            width: 70%;
+        }
+
+
+        /* WORKSHOP PHOTO */
+
+        .polaroid.center-photo {
+
+            width: 70%;
+
+            margin:
+                15px auto;
         }
 
 
         .polaroid.tilt-left {
-            transform: rotate(-4deg);
+
+            transform:
+                rotate(-4deg);
         }
 
 
         .polaroid.tilt-right {
-            transform: rotate(4deg);
+
+            transform:
+                rotate(4deg);
         }
 
 
         .polaroid.tilt-left-2 {
-            transform: rotate(-3deg);
+
+            transform:
+                rotate(-3deg);
         }
 
 
         .polaroid.tilt-right-2 {
-            transform: rotate(3deg);
+
+            transform:
+                rotate(3deg);
         }
 
 
         .polaroid:hover {
+
             transform:
                 scale(1.03)
                 rotate(0deg);
@@ -374,12 +473,22 @@
         }
 
 
+        /* IMPORTANT:
+           Keep entire image visible */
+
         .polaroid img {
+
             width: 100%;
 
-            height: 100%;
+            height: auto;
+
+            max-height: none;
 
             object-fit: contain;
+
+            border-radius: 2px;
+
+            background: #fce4ec;
 
             display: block;
         }
@@ -390,6 +499,7 @@
         ========================= */
 
         .input-group {
+
             margin-bottom: 20px;
 
             text-align: left;
@@ -397,6 +507,7 @@
 
 
         label {
+
             display: block;
 
             font-size: 10.5px;
@@ -414,9 +525,11 @@
 
 
         input[type="text"] {
+
             width: 100%;
 
-            padding: 15px 18px;
+            padding:
+                15px 18px;
 
             background:
                 rgba(255,255,255,0.85);
@@ -442,6 +555,7 @@
 
 
         input[type="text"]:focus {
+
             background: #ffffff;
 
             border-color: #d81b60;
@@ -457,6 +571,7 @@
         ========================= */
 
         .btn {
+
             width: 100%;
 
             background:
@@ -504,6 +619,7 @@
 
 
         .btn:hover {
+
             transform:
                 translateY(-2px);
 
@@ -514,6 +630,7 @@
 
 
         .btn-secondary {
+
             background:
                 rgba(255,255,255,0.8);
 
@@ -533,6 +650,7 @@
         ========================= */
 
         .section-title {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -548,6 +666,7 @@
 
 
         .section-subtitle {
+
             font-size: 11px;
 
             letter-spacing: 3px;
@@ -563,6 +682,7 @@
 
 
         .tagline {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -582,17 +702,21 @@
         ========================= */
 
         .workshop-message {
+
             background:
                 rgba(255,255,255,0.55);
 
             border:
-                1px solid rgba(244,143,177,0.35);
+                1px solid
+                rgba(244,143,177,0.35);
 
             border-radius: 16px;
 
-            padding: 20px 18px;
+            padding:
+                20px 18px;
 
-            margin: 22px 0;
+            margin:
+                22px 0;
 
             color: #5d3543;
 
@@ -605,6 +729,7 @@
 
 
         .workshop-message strong {
+
             display: block;
 
             font-family:
@@ -622,11 +747,13 @@
 
 
         .bring-yourself {
+
             margin-top: 15px;
         }
 
 
         .bring-yourself strong {
+
             display: inline;
 
             font-family:
@@ -644,6 +771,7 @@
         ========================= */
 
         .throwback-section {
+
             background:
                 rgba(255,255,255,0.62);
 
@@ -652,9 +780,11 @@
 
             border-radius: 18px;
 
-            padding: 23px 18px;
+            padding:
+                23px 18px;
 
-            margin: 25px 0;
+            margin:
+                25px 0;
 
             box-shadow:
                 0 5px 18px
@@ -663,6 +793,7 @@
 
 
         .throwback-title {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -678,6 +809,7 @@
 
 
         .throwback-text {
+
             font-size: 13px;
 
             line-height: 1.75;
@@ -689,6 +821,7 @@
 
 
         .throwback-btn {
+
             width: 90%;
 
             font-size: 11px;
@@ -700,6 +833,7 @@
         ========================= */
 
         .unlock-message {
+
             margin-top: 14px;
 
             font-size: 11px;
@@ -715,6 +849,7 @@
         ========================= */
 
         .locked-btn {
+
             background:
                 rgba(255,255,255,0.65);
 
@@ -734,6 +869,7 @@
 
 
         .locked-btn:hover {
+
             transform: none;
 
             box-shadow: none;
@@ -741,6 +877,7 @@
 
 
         .unlocked-btn {
+
             background:
                 linear-gradient(
                     135deg,
@@ -763,6 +900,7 @@
         ========================= */
 
         .final-message {
+
             padding:
                 5px 10px 18px;
 
@@ -771,6 +909,7 @@
 
 
         .final-message-title {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -786,6 +925,7 @@
 
 
         .final-message-text {
+
             font-family:
                 'Cormorant Garamond',
                 serif;
@@ -805,6 +945,7 @@
         ========================= */
 
         .steps-indicator {
+
             display: flex;
 
             justify-content: center;
@@ -816,6 +957,7 @@
 
 
         .dot {
+
             width: 8px;
 
             height: 8px;
@@ -832,6 +974,7 @@
 
 
         .dot.active {
+
             background: #d81b60;
 
             opacity: 1;
@@ -847,6 +990,7 @@
         ========================= */
 
         .confetti-piece {
+
             position: fixed;
 
             top: -30px;
@@ -873,6 +1017,7 @@
         @keyframes confettiFall {
 
             0% {
+
                 transform:
                     translate3d(
                         0,
@@ -882,7 +1027,9 @@
                     rotate(0deg);
             }
 
+
             25% {
+
                 transform:
                     translate3d(
                         var(--drift-1),
@@ -892,7 +1039,9 @@
                     rotate(180deg);
             }
 
+
             50% {
+
                 transform:
                     translate3d(
                         var(--drift-2),
@@ -902,7 +1051,9 @@
                     rotate(360deg);
             }
 
+
             75% {
+
                 transform:
                     translate3d(
                         var(--drift-3),
@@ -912,7 +1063,9 @@
                     rotate(540deg);
             }
 
+
             100% {
+
                 transform:
                     translate3d(
                         var(--drift-4),
@@ -923,7 +1076,6 @@
 
                 opacity: 0;
             }
-
         }
 
 
@@ -933,30 +1085,119 @@
 
         @media (max-width: 480px) {
 
+
             .vintage-card.large-card {
+
                 padding:
                     30px 20px;
             }
 
 
-            .polaroid img {
-                height: 110px;
+            /*
+             * CHILDHOOD PHOTO
+             * Much larger on mobile
+             */
+
+            .photo-row .polaroid:only-child {
+
+                width: 85%;
             }
 
 
+            /*
+             * WORKSHOP PHOTO
+             * Almost full width on mobile
+             */
+
             .polaroid.center-photo {
-                width: 80%;
+
+                width: 95%;
+            }
+
+
+            /*
+             * Keep the whole photo visible
+             */
+
+            .polaroid img {
+
+                width: 100%;
+
+                height: auto;
+
+                object-fit: contain;
             }
 
 
             .section-title {
+
                 font-size: 32px;
             }
 
 
             .scrapbook-frame {
+
                 padding:
                     28px 16px;
+            }
+
+
+            .photo-row {
+
+                gap: 12px;
+            }
+
+
+            /*
+             * Keep the two memory photos
+             * side-by-side
+             */
+
+            .photo-row:not(:has(.polaroid:only-child)) {
+
+                gap: 10px;
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================= */
+
+        @media (max-width: 360px) {
+
+
+            .vintage-card {
+
+                padding:
+                    28px 18px;
+            }
+
+
+            .vintage-card.large-card {
+
+                padding:
+                    28px 16px;
+            }
+
+
+            .photo-row .polaroid:only-child {
+
+                width: 90%;
+            }
+
+
+            .polaroid.center-photo {
+
+                width: 100%;
+            }
+
+
+            .scrapbook-frame {
+
+                padding:
+                    25px 12px;
             }
 
         }
@@ -966,12 +1207,17 @@
 </head>
 
 
+
 <body>
 
 
 <div class="card-container">
 
-    <div class="vintage-card" id="mainCard">
+
+    <div
+        class="vintage-card"
+        id="mainCard"
+    >
 
 
         <!-- =========================
@@ -980,20 +1226,24 @@
 
         <div class="steps-indicator">
 
+
             <div
                 class="dot active"
                 id="dot1"
             ></div>
+
 
             <div
                 class="dot"
                 id="dot2"
             ></div>
 
+
             <div
                 class="dot"
                 id="dot3"
             ></div>
+
 
         </div>
 
@@ -1008,31 +1258,52 @@
             id="page1"
         >
 
-            <div style="text-align:center;">
+
+            <div
+                style="text-align:center;"
+            >
+
 
                 <span class="badge">
+
                     SECRET INVITATION
+
                 </span>
 
 
+
                 <h1>
-                    You hold a private key to an exclusive space.
+
+                    You hold a private key
+                    to an exclusive space.
+
                 </h1>
 
 
+
                 <p class="text-p">
+
                     Enter your name to join us. 🔑
+
                 </p>
 
 
+
                 <form
-                    onsubmit="handleFirstSubmit(event)"
+                    onsubmit="
+                        handleFirstSubmit(event)
+                    "
                 >
+
 
                     <div class="input-group">
 
-                        <label for="guestName">
+
+                        <label
+                            for="guestName"
+                        >
                         </label>
+
 
 
                         <input
@@ -1043,19 +1314,26 @@
                             autocomplete="off"
                         >
 
+
                     </div>
+
 
 
                     <button
                         type="submit"
                         class="btn"
                     >
+
                         Unlock Your Letter ✨
+
                     </button>
+
 
                 </form>
 
+
             </div>
+
 
         </div>
 
@@ -1070,17 +1348,26 @@
             id="page2"
         >
 
-            <div style="text-align:center;">
+
+            <div
+                style="text-align:center;"
+            >
+
 
                 <span class="badge">
+
                     SPECIAL INVITATION
+
                 </span>
 
 
-                <h1 style="
-                    font-size:26px;
-                    margin-bottom:10px;
-                ">
+
+                <h1
+                    style="
+                        font-size:26px;
+                        margin-bottom:10px;
+                    "
+                >
 
                     Dear
 
@@ -1093,81 +1380,124 @@
                 </h1>
 
 
+
                 <p
                     class="text-p"
                     style="
-                        margin-bottom: 18px;
+                        margin-bottom:18px;
                     "
                 >
+
                     You’ve been specially selected
                     to join our special event!
+
                 </p>
 
 
 
                 <!-- CURVED SCRAPBOOK FRAME -->
 
-                <div class="scrapbook-frame">
+                <div
+                    class="scrapbook-frame"
+                >
 
 
-                    <div class="email-body">
+                    <div
+                        class="email-body"
+                    >
 
 
                         <!-- CHILDHOOD PHOTO -->
 
-                        <div class="photo-row">
+                        <div
+                            class="photo-row"
+                        >
 
-                            <div class="polaroid tilt-left">
+
+                            <div
+                                class="
+                                    polaroid
+                                    tilt-left
+                                "
+                            >
+
 
                                 <img
                                     src="images/childhood.jpeg"
                                     alt="Childhood Memory"
                                 >
 
+
                             </div>
+
 
                         </div>
 
 
 
                         <p>
-                            Since our birthday girl is turning 20—
-                            and let’s be honest, that doesn’t happen every day—
-                            we wanted to create something truly special
-                            for her new journey.
+
+                            Since our birthday girl
+                            is turning 20—
+                            and let’s be honest,
+                            that doesn’t happen every day—
+                            we wanted to create something
+                            truly special for her new journey.
+
                         </p>
 
 
 
                         <p>
-                            She’s always had a way of getting exactly
-                            what she wants, so we knew turning 20
-                            had to be something a little different.
+
+                            She’s always had a way
+                            of getting exactly what she wants,
+                            so we knew turning 20
+                            had to be something
+                            a little different.
+
                         </p>
 
 
 
                         <!-- MEMORY PHOTOS -->
 
-                        <div class="photo-row">
+                        <div
+                            class="photo-row"
+                        >
 
 
-                            <div class="polaroid tilt-right-2">
+                            <div
+                                class="
+                                    polaroid
+                                    tilt-right-2
+                                "
+                            >
+
 
                                 <img
                                     src="images/memory1.jpeg"
                                     alt="Memory"
                                 >
 
+
                             </div>
 
 
-                            <div class="polaroid tilt-left-2">
+
+                            <div
+                                class="
+                                    polaroid
+                                    tilt-left-2
+                                "
+                            >
+
 
                                 <img
                                     src="images/memory2.jpeg"
                                     alt="Memory"
                                 >
+
 
                             </div>
 
@@ -1177,22 +1507,32 @@
 
 
                         <p>
-                            We’re hosting a private, handcrafted workshop
-                            with the people she deeply loves and values most.
+
+                            We’re hosting a private,
+                            handcrafted workshop
+                            with the people she deeply
+                            loves and values most.
+
                         </p>
 
 
 
                         <p>
 
+
                             <strong>
-                                That’s why sending you this invitation was a must!
+
+                                That’s why sending you
+                                this invitation was a must!
+
                             </strong>
+
 
                         </p>
 
 
                     </div>
+
 
                 </div>
 
@@ -1200,13 +1540,18 @@
 
                 <button
                     class="btn"
-                    onclick="goToPage(3)"
+                    onclick="
+                        goToPage(3)
+                    "
                 >
+
                     Discover More ➔
+
                 </button>
 
 
             </div>
+
 
         </div>
 
@@ -1221,38 +1566,67 @@
             id="page3"
         >
 
-            <div style="text-align:center;">
+
+            <div
+                style="text-align:center;"
+            >
 
 
                 <span class="badge">
+
                     THE EXPERIENCE
+
                 </span>
 
 
-                <div class="section-title">
+
+                <div
+                    class="section-title"
+                >
+
                     20s WORKSHOP
+
                 </div>
 
 
-                <div class="section-subtitle">
+
+                <div
+                    class="section-subtitle"
+                >
+
                     MORE THAN A WORKSHOP
+
                 </div>
 
 
-                <div class="tagline">
-                    A memorable beginning to our twenties. 💖
+
+                <div
+                    class="tagline"
+                >
+
+                    A memorable beginning
+                    to our twenties. 💖
+
                 </div>
 
 
 
                 <!-- WORKSHOP PHOTO -->
 
-                <div class="polaroid tilt-right center-photo">
+                <div
+                    class="
+                        polaroid
+                        tilt-right
+                        center-photo
+                    "
+                >
+
 
                     <img
                         src="images/workshop.png"
                         alt="Workshop"
                     >
+
 
                 </div>
 
@@ -1260,33 +1634,50 @@
 
                 <!-- WORKSHOP MESSAGE -->
 
-                <div class="workshop-message">
+                <div
+                    class="workshop-message"
+                >
 
 
                     <strong>
+
                         This isn't just a workshop —
                         it's a cozy private experience
                         to create something special together
                         and make memories along the way.
+
                     </strong>
 
 
-                    <div class="bring-yourself">
+
+                    <div
+                        class="bring-yourself"
+                    >
 
                         🧳
 
+
                         <strong>
-                            No need to bring anything — just bring yourself!
+
+                            No need to bring anything —
+                            just bring yourself!
+
                         </strong>
+
 
                         <br>
 
+
                         <em>
+
                             Seriously, just show up.
                             We’ve got everything covered.
+
                         </em>
 
+
                     </div>
+
 
                 </div>
 
@@ -1294,49 +1685,94 @@
 
                 <!-- CHILDHOOD UPLOAD -->
 
-                <div class="throwback-section">
+                <div
+                    class="throwback-section"
+                >
 
 
-                    <div class="throwback-title">
-                        ONE LITTLE THING FROM YOU 📸
+                    <div
+                        class="throwback-title"
+                    >
+
+                        ONE LITTLE THING
+                        FROM YOU 📸
+
                     </div>
 
 
-                    <p class="throwback-text">
-                        Sending us your childhood photo is a must—
-                        you won’t be able to join us without it. 🤭
+
+                    <p
+                        class="throwback-text"
+                    >
+
+                        Sending us your childhood
+                        photo is a must—
+                        you won’t be able to join us
+                        without it. 🤭
+
                     </p>
+
 
 
                     <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSf9HPOMJ8-rJME_wLwWqN3yLQFaXUSFTyS6_y5z4H4QpymPVA/viewform?usp=dialog"
+                        href="
+                        https://docs.google.com/forms/d/e/1FAIpQLSf9HPOMJ8-rJME_wLwWqN3yLQFaXUSFTyS6_y5z4H4QpymPVA/viewform?usp=dialog
+                        "
                         target="_blank"
-                        class="btn throwback-btn"
+                        class="
+                            btn
+                            throwback-btn
+                        "
                     >
-                        Share Your Childhood Photo 📸
+
+                        Share Your Childhood
+                        Photo 📸
+
                     </a>
 
 
-                    <p class="unlock-message">
-                        Once you’ve sent your photo,
-                        come back here to unlock the details.
+
+                    <p
+                        class="unlock-message"
+                    >
+
+                        Once you’ve sent
+                        your photo,
+                        come back here
+                        to unlock the details.
+
                     </p>
+
 
 
                     <button
                         id="confirmPhotoBtn"
-                        class="btn confirmation-btn"
-                        onclick="unlockGroup()"
+                        class="
+                            btn
+                            confirmation-btn
+                        "
+                        onclick="
+                            unlockGroup()
+                        "
                         style="
                             margin-top:12px;
                             width:90%;
-                            background:rgba(255,255,255,0.8);
+                            background:
+                                rgba(
+                                    255,
+                                    255,
+                                    255,
+                                    0.8
+                                );
                             color:#880e4f;
-                            border:1px solid #f48fb1;
+                            border:
+                                1px solid #f48fb1;
                             box-shadow:none;
                         "
                     >
+
                         I’ve Sent My Photo
+
                     </button>
 
 
@@ -1346,13 +1782,22 @@
 
                 <!-- FINAL MESSAGE -->
 
-                <div class="final-message">
+                <div
+                    class="final-message"
+                >
 
 
-                    <div class="final-message-text">
+                    <div
+                        class="
+                            final-message-text
+                        "
+                    >
+
                         A little celebration,
                         a little creativity,
-                        and a lot of memories to make together.
+                        and a lot of memories
+                        to make together.
+
                     </div>
 
 
@@ -1364,30 +1809,47 @@
 
                 <a
                     id="detailsButton"
-                    href="https://chat.whatsapp.com/KIVRki5YRlDG4ZD5Kjc25b?s=sw&p=i&mlu=0"
+                    href="
+                    https://chat.whatsapp.com/KIVRki5YRlDG4ZD5Kjc25b?s=sw&p=i&mlu=0
+                    "
                     target="_blank"
-                    class="btn locked-btn"
+                    class="
+                        btn
+                        locked-btn
+                    "
                     aria-disabled="true"
                 >
-                    🔒 For More Details, Join Us Here
+
+                    🔒 For More Details,
+                    Join Us Here
+
                 </a>
 
 
 
                 <button
-                    class="btn btn-secondary"
-                    onclick="goToPage(2)"
+                    class="
+                        btn
+                        btn-secondary
+                    "
+                    onclick="
+                        goToPage(2)
+                    "
                 >
+
                     Back to Letter
+
                 </button>
 
 
             </div>
 
+
         </div>
 
 
     </div>
+
 
 </div>
 
@@ -1414,22 +1876,36 @@
 
     function launchConfetti() {
 
+
         const colors = [
+
             '#d81b60',
+
             '#f48fb1',
+
             '#ff80ab',
+
             '#ec407a',
+
             '#ce93d8',
+
             '#ba68c8',
+
             '#81d4fa',
+
             '#4fc3f7',
+
             '#fff176',
+
             '#ffd54f',
+
             '#ffb74d'
+
         ];
 
 
         const pieces = 140;
+
 
 
         for (
@@ -1438,24 +1914,35 @@
             i++
         ) {
 
+
             const confetti =
-                document.createElement('div');
+                document.createElement(
+                    'div'
+                );
 
 
             confetti.className =
                 'confetti-piece';
 
 
-            /* Random starting position */
+
+            /*
+             * Starting position
+             */
 
             confetti.style.left =
-                Math.random() * 100 + 'vw';
+                Math.random() * 100 +
+                'vw';
 
 
-            /* Random size */
+
+            /*
+             * Random size
+             */
 
             const width =
                 Math.random() * 7 + 6;
+
 
             const height =
                 Math.random() * 10 + 8;
@@ -1464,11 +1951,15 @@
             confetti.style.width =
                 width + 'px';
 
+
             confetti.style.height =
                 height + 'px';
 
 
-            /* Random color */
+
+            /*
+             * Random color
+             */
 
             confetti.style.backgroundColor =
                 colors[
@@ -1479,7 +1970,10 @@
                 ];
 
 
-            /* Random shape */
+
+            /*
+             * Random shape
+             */
 
             const shape =
                 Math.random();
@@ -1494,11 +1988,13 @@
 
                 confetti.style.borderRadius =
                     '2px';
-
             }
 
 
-            /* Random fall duration */
+
+            /*
+             * Animation timing
+             */
 
             const duration =
                 Math.random() * 2.5 + 3.5;
@@ -1520,19 +2016,30 @@
             );
 
 
-            /* Random sideways movement */
+
+            /*
+             * Random sideways movement
+             */
 
             const drift1 =
-                (Math.random() - 0.5) * 120;
+                (Math.random() - 0.5) *
+                120;
+
 
             const drift2 =
-                (Math.random() - 0.5) * 220;
+                (Math.random() - 0.5) *
+                220;
+
 
             const drift3 =
-                (Math.random() - 0.5) * 320;
+                (Math.random() - 0.5) *
+                320;
+
 
             const drift4 =
-                (Math.random() - 0.5) * 420;
+                (Math.random() - 0.5) *
+                420;
+
 
 
             confetti.style.setProperty(
@@ -1540,15 +2047,18 @@
                 drift1 + 'px'
             );
 
+
             confetti.style.setProperty(
                 '--drift-2',
                 drift2 + 'px'
             );
 
+
             confetti.style.setProperty(
                 '--drift-3',
                 drift3 + 'px'
             );
+
 
             confetti.style.setProperty(
                 '--drift-4',
@@ -1556,18 +2066,27 @@
             );
 
 
+
             document.body.appendChild(
                 confetti
             );
 
 
-            /* Remove after animation */
+
+            /*
+             * Remove after animation
+             */
 
             setTimeout(
                 () => {
+
                     confetti.remove();
+
                 },
-                (duration + delay) * 1000 + 200
+                (
+                    duration +
+                    delay
+                ) * 1000 + 200
             );
 
         }
@@ -1582,39 +2101,49 @@
 
     function handleFirstSubmit(event) {
 
+
         event.preventDefault();
 
 
         const nameInput =
             document
-                .getElementById('guestName')
+                .getElementById(
+                    'guestName'
+                )
                 .value
                 .trim();
 
 
         if (!nameInput) {
+
             return;
         }
 
 
+
         document
-            .getElementById('displayName')
+            .getElementById(
+                'displayName'
+            )
             .innerText =
             nameInput;
+
 
 
         nameEntered = true;
 
 
+
         /*
-         * Go to Page 2
+         * Open Page 2
          */
 
         goToPage(2);
 
 
+
         /*
-         * Launch the celebration!
+         * Party time! 🎉
          */
 
         launchConfetti();
@@ -1634,18 +2163,22 @@
             targetPage > 1 &&
             !nameEntered
         ) {
+
             return;
         }
+
 
 
         currentPage =
             targetPage;
 
 
+
         const mainCard =
             document.getElementById(
                 'mainCard'
             );
+
 
 
         if (targetPage === 1) {
@@ -1664,27 +2197,45 @@
 
 
 
+        /*
+         * Hide all pages
+         */
+
         document
             .querySelectorAll('.page')
             .forEach(
-                page =>
+                page => {
+
                     page.classList.remove(
                         'active'
-                    )
+                    );
+
+                }
             );
 
 
+
+        /*
+         * Reset progress dots
+         */
 
         document
             .querySelectorAll('.dot')
             .forEach(
-                dot =>
+                dot => {
+
                     dot.classList.remove(
                         'active'
-                    )
+                    );
+
+                }
             );
 
 
+
+        /*
+         * Show selected page
+         */
 
         document
             .getElementById(
@@ -1696,6 +2247,10 @@
 
 
 
+        /*
+         * Activate progress dot
+         */
+
         document
             .getElementById(
                 'dot' + targetPage
@@ -1704,8 +2259,18 @@
                 'active'
             );
 
-        
-        window.scrollTo(0, 0);
+
+
+        /*
+         * IMPORTANT:
+         * Start every new page
+         * at the top.
+         */
+
+        window.scrollTo(
+            0,
+            0
+        );
 
     }
 
@@ -1718,13 +2283,16 @@
 
     function unlockGroup() {
 
+
         photoUploaded = true;
+
 
 
         const button =
             document.getElementById(
                 'detailsButton'
             );
+
 
 
         button.classList.remove(
@@ -1743,7 +2311,7 @@
 
 
         button.innerHTML =
-            'For More Details, Join Us Here ';
+            'For More Details, Join Us Here';
 
 
 
@@ -1753,16 +2321,20 @@
             );
 
 
+
         confirmButton.innerText =
             'Photo Sent ✓';
+
 
 
         confirmButton.disabled =
             true;
 
 
+
         confirmButton.style.opacity =
             '0.65';
+
 
 
         confirmButton.style.cursor =
