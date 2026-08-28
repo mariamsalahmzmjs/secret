@@ -991,96 +991,18 @@
 
         .confetti-piece {
 
-            position: fixed;
+    position: fixed;
 
-            top: -30px;
+    pointer-events: none;
 
-            width: 9px;
+    z-index: 99999;
 
-            height: 15px;
+    opacity: 1;
 
-            pointer-events: none;
-
-            z-index: 99999;
-
-            opacity: 1;
-
-            will-change:
-             transform,
-             opacity;
-
-            animation:
-             confettiFall
-             var(--fall-duration)
-             linear
-            var(--fall-delay)
-            forwards;
+    will-change:
+        transform,
+        opacity;
 }
-
-
-        @keyframes confettiFall {
-
-            0% {
-
-                transform:
-                    translate3d(
-                        0,
-                        -30px,
-                        0
-                    )
-                    rotate(0deg);
-            }
-
-
-            25% {
-
-                transform:
-                    translate3d(
-                        var(--drift-1),
-                        25vh,
-                        0
-                    )
-                    rotate(180deg);
-            }
-
-
-            50% {
-
-                transform:
-                    translate3d(
-                        var(--drift-2),
-                        50vh,
-                        0
-                    )
-                    rotate(360deg);
-            }
-
-
-            75% {
-
-                transform:
-                    translate3d(
-                        var(--drift-3),
-                        75vh,
-                        0
-                    )
-                    rotate(540deg);
-            }
-
-
-            100% {
-
-                transform:
-                    translate3d(
-                        var(--drift-4),
-                        110vh,
-                        0
-                    )
-                    rotate(720deg);
-
-                opacity: 0;
-            }
-        }
 
 
         /* =========================
@@ -1874,287 +1796,55 @@
 
 
 
-    /* =========================
-       CONFETTI
-    ========================= */
+
+/* =========================
+   FIREWORKS CONFETTI
+========================= */
 
 function launchConfetti() {
 
-    const colors = [
-        '#d81b60',
-        '#f48fb1',
-        '#ff80ab',
-        '#ec407a',
-        '#ce93d8',
-        '#ba68c8',
-        '#81d4fa',
-        '#4fc3f7',
-        '#fff176',
-        '#ffd54f',
-        '#ffb74d',
-        '#ffffff'
-    ];
-
-    const pieces = 220;
-
-
-    for (let i = 0; i < pieces; i++) {
-
-        const confetti = document.createElement('div');
-
-        confetti.className = 'confetti-piece';
-
-
-        /* -------------------------
-           RANDOM STARTING POSITION
-        ------------------------- */
-
-        let startX;
-        let startY;
-
-        const launchType = Math.random();
-
-
-        /*
-         * Most pieces start near
-         * the top/center of the screen.
-         */
-
-        if (launchType < 0.55) {
-
-            startX =
-                20 +
-                Math.random() * 60;
-
-            startY =
-                -30;
-
-        }
-
-        /*
-         * Some burst from the
-         * left side.
-         */
-
-        else if (launchType < 0.775) {
-
-            startX =
-                Math.random() * 12;
-
-            startY =
-                35 +
-                Math.random() * 25;
-
-        }
-
-        /*
-         * Some burst from the
-         * right side.
-         */
-
-        else {
-
-            startX =
-                88 +
-                Math.random() * 12;
-
-            startY =
-                35 +
-                Math.random() * 25;
-
-        }
-
-
-        confetti.style.left =
-            startX + 'vw';
-
-        confetti.style.top =
-            startY + 'vh';
-
-
-        /* -------------------------
-           RANDOM SIZE
-        ------------------------- */
-
-        const width =
-            Math.random() * 9 + 5;
-
-        const height =
-            Math.random() * 14 + 7;
-
-
-        confetti.style.width =
-            width + 'px';
-
-        confetti.style.height =
-            height + 'px';
-
-
-        /* -------------------------
-           RANDOM COLOR
-        ------------------------- */
-
-        confetti.style.backgroundColor =
-            colors[
-                Math.floor(
-                    Math.random() *
-                    colors.length
-                )
-            ];
-
-
-        /* -------------------------
-           RANDOM SHAPE
-        ------------------------- */
-
-        const shape =
-            Math.random();
-
-
-        if (shape < 0.2) {
-
-            confetti.style.borderRadius =
-                '50%';
-
-        }
-
-        else if (shape < 0.4) {
-
-            confetti.style.borderRadius =
-                '2px';
-
-        }
-
-        else if (shape < 0.55) {
-
-            confetti.style.clipPath =
-                'polygon(50% 0%, 100% 100%, 0% 100%)';
-
-        }
-
-
-        /* -------------------------
-           RANDOM ROTATION
-        ------------------------- */
-
-        const rotation =
-            Math.random() * 360;
-
-        confetti.style.transform =
-            `rotate(${rotation}deg)`;
-
-
-        /* -------------------------
-           DIFFERENT FALL SPEEDS
-        ------------------------- */
-
-        const duration =
-            Math.random() * 3.5 + 3.5;
-
-        const delay =
-            Math.random() * 0.7;
-
-
-        confetti.style.setProperty(
-            '--fall-duration',
-            duration + 's'
-        );
-
-        confetti.style.setProperty(
-            '--fall-delay',
-            delay + 's'
-        );
-
-
-        /* -------------------------
-           WILD SIDEWAYS MOVEMENT
-        ------------------------- */
-
-        const drift1 =
-            (Math.random() - 0.5) * 180;
-
-        const drift2 =
-            (Math.random() - 0.5) * 350;
-
-        const drift3 =
-            (Math.random() - 0.5) * 500;
-
-        const drift4 =
-            (Math.random() - 0.5) * 650;
-
-
-        confetti.style.setProperty(
-            '--drift-1',
-            drift1 + 'px'
-        );
-
-        confetti.style.setProperty(
-            '--drift-2',
-            drift2 + 'px'
-        );
-
-        confetti.style.setProperty(
-            '--drift-3',
-            drift3 + 'px'
-        );
-
-        confetti.style.setProperty(
-            '--drift-4',
-            drift4 + 'px'
-        );
-
-
-        document.body.appendChild(
-            confetti
-        );
-
-
-        /* -------------------------
-           REMOVE AFTER ANIMATION
-        ------------------------- */
-
-        setTimeout(
-            () => {
-
-                confetti.remove();
-
-            },
-            (
-                duration +
-                delay
-            ) * 1000 + 500
-        );
-
-    }
-
-
-    /* =========================
-       SECONDARY BURST
-       A MOMENT AFTER PAGE OPENS
-    ========================= */
+    /*
+     * Launch several fireworks
+     * at different positions and times.
+     */
+
+    createFirework(25, 32, 45);
+    createFirework(75, 28, 50);
 
     setTimeout(() => {
-
-        createBurst(35);
-
-    }, 350);
-
-
-    /* =========================
-       THIRD SMALL BURST
-    ========================= */
+        createFirework(50, 22, 60);
+    }, 250);
 
     setTimeout(() => {
+        createFirework(18, 40, 45);
+    }, 550);
 
-        createBurst(25);
+    setTimeout(() => {
+        createFirework(82, 38, 45);
+    }, 800);
 
-    }, 750);
+    /*
+     * A final big center explosion
+     */
 
+    setTimeout(() => {
+        createFirework(50, 30, 80);
+    }, 1100);
 }
 
-    function createBurst(amount) {
+
+/* =========================
+   CREATE FIREWORK
+========================= */
+
+function createFirework(
+    xPercent,
+    yPercent,
+    particleCount
+) {
 
     const colors = [
+
         '#d81b60',
         '#f48fb1',
         '#ff80ab',
@@ -2167,45 +1857,70 @@ function launchConfetti() {
         '#ffd54f',
         '#ffb74d',
         '#ffffff'
+
     ];
 
 
     /*
-     * Create burst from
-     * the center of the screen
+     * Create the explosion particles
      */
 
-    for (let i = 0; i < amount; i++) {
+    for (
+        let i = 0;
+        i < particleCount;
+        i++
+    ) {
 
-        const piece =
+        const particle =
             document.createElement('div');
 
 
-        piece.className =
+        particle.className =
             'confetti-piece';
 
 
-        piece.style.position =
+        /*
+         * Starting position
+         */
+
+        particle.style.position =
             'fixed';
 
+        particle.style.left =
+            xPercent + 'vw';
 
-        piece.style.left =
-            '50vw';
-
-
-        piece.style.top =
-            '35vh';
+        particle.style.top =
+            yPercent + 'vh';
 
 
-        piece.style.width =
-            Math.random() * 9 + 6 + 'px';
+        particle.style.zIndex =
+            '99999';
 
 
-        piece.style.height =
-            Math.random() * 14 + 8 + 'px';
+        particle.style.pointerEvents =
+            'none';
 
 
-        piece.style.backgroundColor =
+        /*
+         * Random particle size
+         */
+
+        const size =
+            Math.random() * 5 + 4;
+
+
+        particle.style.width =
+            size + 'px';
+
+        particle.style.height =
+            size * 1.6 + 'px';
+
+
+        /*
+         * Random color
+         */
+
+        particle.style.backgroundColor =
             colors[
                 Math.floor(
                     Math.random() *
@@ -2214,12 +1929,16 @@ function launchConfetti() {
             ];
 
 
-        piece.style.zIndex =
-            '99999';
+        /*
+         * Random shapes
+         */
 
+        if (Math.random() < 0.25) {
 
-        piece.style.pointerEvents =
-            'none';
+            particle.style.borderRadius =
+                '50%';
+
+        }
 
 
         /*
@@ -2232,8 +1951,13 @@ function launchConfetti() {
             2;
 
 
+        /*
+         * Make some particles
+         * travel farther than others.
+         */
+
         const distance =
-            Math.random() * 280 + 120;
+            Math.random() * 220 + 80;
 
 
         const endX =
@@ -2246,128 +1970,257 @@ function launchConfetti() {
             distance;
 
 
-        const rotation =
-            Math.random() * 720 -
-            360;
+        /*
+         * Add slight gravity
+         */
 
+        const gravity =
+            Math.random() * 100 + 80;
+
+
+        /*
+         * Random rotation
+         */
+
+        const rotation =
+            Math.random() * 1080 - 540;
+
+
+        /*
+         * Different speeds
+         */
 
         const duration =
-            Math.random() * 1.4 + 1.5;
+            Math.random() * 900 + 1100;
 
 
-        piece.animate(
+        /*
+         * Add particle to page
+         */
+
+        document.body.appendChild(
+            particle
+        );
+
+
+        /*
+         * Animate the explosion
+         */
+
+        particle.animate(
+
             [
+
+                /* START */
+
                 {
                     transform:
-                        'translate(-50%, -50%) scale(0.3) rotate(0deg)',
+                        'translate(-50%, -50%) scale(0)',
                     opacity: 1
                 },
+
+
+                /* EXPLOSION */
 
                 {
                     transform:
                         `translate(
-                            calc(-50% + ${endX * 0.55}px),
-                            calc(-50% + ${endY * 0.55}px)
+                            calc(-50% + ${endX * 0.45}px),
+                            calc(-50% + ${endY * 0.45}px)
                         )
-                        scale(1.1)
-                        rotate(${rotation / 2}deg)`,
-                    opacity: 1
+                        rotate(${rotation * 0.35}deg)
+                        scale(1.3)`,
+
+                    opacity: 1,
+
+                    offset: 0.35
                 },
+
+
+                /* FALL */
 
                 {
                     transform:
                         `translate(
                             calc(-50% + ${endX}px),
-                            calc(-50% + ${endY + 180}px)
+                            calc(
+                                -50% +
+                                ${endY + gravity}px
+                            )
                         )
-                        scale(0.8)
-                        rotate(${rotation}deg)`,
+                        rotate(${rotation}deg)
+                        scale(0.7)`,
+
                     opacity: 0
                 }
+
             ],
+
             {
+
                 duration:
-                    duration * 1000,
+                    duration,
 
                 easing:
-                    'cubic-bezier(.15,.8,.25,1)',
+                    'cubic-bezier(.1,.7,.2,1)',
 
                 fill:
                     'forwards'
+
             }
+
         );
 
 
-        document.body.appendChild(
-            piece
-        );
-
+        /*
+         * Remove particle
+         */
 
         setTimeout(
-            () => piece.remove(),
-            duration * 1000 + 100
+
+            () => {
+
+                particle.remove();
+
+            },
+
+            duration + 100
+
         );
 
     }
+
+
+    /*
+     * Add a glowing center flash
+     */
+
+    createFireworkFlash(
+        xPercent,
+        yPercent
+    );
 
 }
 
 
+/* =========================
+   FIREWORK FLASH
+========================= */
 
-    /* =========================
-       NAME SUBMISSION
-    ========================= */
+function createFireworkFlash(
+    xPercent,
+    yPercent
+) {
 
-    function handleFirstSubmit(event) {
-
-
-        event.preventDefault();
-
-
-        const nameInput =
-            document
-                .getElementById(
-                    'guestName'
-                )
-                .value
-                .trim();
+    const flash =
+        document.createElement('div');
 
 
-        if (!nameInput) {
+    flash.style.position =
+        'fixed';
 
-            return;
+
+    flash.style.left =
+        xPercent + 'vw';
+
+
+    flash.style.top =
+        yPercent + 'vh';
+
+
+    flash.style.width =
+        '18px';
+
+
+    flash.style.height =
+        '18px';
+
+
+    flash.style.borderRadius =
+        '50%';
+
+
+    flash.style.background =
+        '#ffffff';
+
+
+    flash.style.boxShadow =
+        `
+        0 0 10px #ffffff,
+        0 0 25px #ffd54f,
+        0 0 45px #f48fb1
+        `;
+
+
+    flash.style.transform =
+        'translate(-50%, -50%)';
+
+
+    flash.style.zIndex =
+        '99998';
+
+
+    flash.style.pointerEvents =
+        'none';
+
+
+    document.body.appendChild(
+        flash
+    );
+
+
+    flash.animate(
+
+        [
+
+            {
+                transform:
+                    'translate(-50%, -50%) scale(0)',
+                opacity: 0
+            },
+
+            {
+                transform:
+                    'translate(-50%, -50%) scale(2)',
+                opacity: 1
+            },
+
+            {
+                transform:
+                    'translate(-50%, -50%) scale(0.5)',
+                opacity: 0
+            }
+
+        ],
+
+        {
+
+            duration: 450,
+
+            easing:
+                'ease-out',
+
+            fill:
+                'forwards'
+
         }
 
+    );
 
 
-        document
-            .getElementById(
-                'displayName'
-            )
-            .innerText =
-            nameInput;
+    setTimeout(
 
+        () => {
 
+            flash.remove();
 
-        nameEntered = true;
+        },
 
+        500
 
+    );
 
-        /*
-         * Open Page 2
-         */
-
-        goToPage(2);
-
-
-
-        /*
-         * Party time! 🎉
-         */
-
-        launchConfetti();
-
-    }
+}
 
 
 
